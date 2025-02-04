@@ -1,0 +1,48 @@
+/* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #111723;
+}
+
+/* Base Head Styling */
+.base-text {
+  @apply bg-secondary-gradient text-transparent bg-clip-text inline-block;
+}
+
+/* Text Size Variations */
+.base-text-600 {
+  @apply base-text text-6xl; /* Set to 6xl font size */
+}
+
+.base-text-500 {
+  @apply base-text text-5xl; /* Set to 5xl font size */
+}
+
+.base-text-400 {
+  @apply base-text text-4xl; /* Set to 5xl font size */
+}
+
+.base-text-300 {
+  @apply base-text text-3xl; /* Set to 5xl font size */
+}
+
+.base-text-200 {
+  @apply base-text text-2xl; /* Set to 5xl font size */
+}
+
+
+.base-text-100 {
+  @apply base-text text-xl; /* Set to 5xl font size */
+}
+
+/* Global Reset */
+* {
+  font-family: var(--font-inter), Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
