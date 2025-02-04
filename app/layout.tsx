@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/shared/Header";
+import Footer from "@/app/_components/shared/Footer";
+import ScrollToTopButton from "@/app/_components/shared/ScrollToTopButton"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +36,8 @@ export default function RootLayout({
       <Header/>
 
         {children}
+        <ScrollToTopButton/>
+        <Footer/>
       </body>
     </html>
   );
