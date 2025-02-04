@@ -5,15 +5,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react"; // Import useState and useEffect
-
+import { useRouter } from 'next/navigation'
 function Header() {
     const [isEnglish, setIsEnglish] = useState(true); // State to manage language
     const pathname = usePathname(); // Get current route
+    const router = useRouter()
 
     // Toggle language and update the URL query parameter
     const handleLanguageToggle = () => {
         setIsEnglish((prev) => !prev); // Toggle between English and Malayalam
-        
+
         // Update the URL with the language query parameter
         const currentUrl = new URL(window.location);
         currentUrl.searchParams.set("lang", isEnglish ? "malayalam" : "english");
@@ -47,7 +48,8 @@ function Header() {
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-lg font-semibold"
+                    className="text-lg font-semibold cursor-pointer"
+                    onClick={() => router.push("/")}
                 >
                     <h1 className="base-text-200 inline">S</h1>udhi S.
                 </motion.div>
@@ -69,9 +71,8 @@ function Header() {
                                         pathname: linkobj.url,
                                         query: { lang: isEnglish ? "english" : "malayalam" },
                                     }}
-                                    className={`${
-                                        isActive ? "base-text font-bold underline" : ""
-                                    } hover:text-emerald-300 transition duration-300 text-base sm:text-lg`}
+                                    className={`${isActive ? "base-text font-bold underline" : ""
+                                        } hover:text-emerald-300 transition duration-300 text-base sm:text-lg`}
                                 >
                                     {linkobj.label}
                                 </Link>
@@ -90,9 +91,8 @@ function Header() {
                 >
                     {/* Slider */}
                     <motion.div
-                        className={`w-16 h-8 rounded-full p-1 transition-all duration-300 ${
-                            isEnglish ? "bg-emerald-500" : "bg-gray-500"
-                        }`}
+                        className={`w-16 h-8 rounded-full p-1 transition-all duration-300 ${isEnglish ? "bg-emerald-500" : "bg-gray-500"
+                            }`}
                     >
                         {/* Toggle Ball */}
                         <motion.div

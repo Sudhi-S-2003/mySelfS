@@ -1,8 +1,8 @@
-import AnimatedComponent from "@/app/_components/AnimatedComponent"
+import HeroSection from "@/app/_components/HeroSection"
 function page() {
   return (
     <div>
-      <AnimatedComponent/>
+      <HeroSection/>
     
     </div>
   )
